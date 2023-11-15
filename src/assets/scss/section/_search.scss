@@ -1,6 +1,12 @@
+#searchPage {
+    padding: 20px;
+    h2 {
+        margin-bottom: 20px;
+    }
+}
 .search__inner {
     width: 100%;
-    padding: 17px 40px;
+    padding: 17px 17px;
     border-bottom: 1px solid var(--black600);
 
     label {
@@ -14,5 +20,17 @@
         padding: 15px 30px;
         border-radius: 50px;
         color: var(--black);
+    }
+}
+.video__more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .button__more {
+        padding: 10px 20px;
+        border: 1px solid var(--black600);
+        border-radius: 20px;
+        background-color: var(--subColor);
     }
 }
