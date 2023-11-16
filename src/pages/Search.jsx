@@ -41,7 +41,7 @@ const Search = () => {
       <h2>🔎{searchId} 검색 결과</h2>
 
       <div className='video__inner'>
-                <VideoSearch videos={videos} />
+                <VideoSearch videos={videos} showInfo={true}/>
             </div>
     </section>
 

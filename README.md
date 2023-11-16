@@ -31,7 +31,7 @@ const [변수, 함수] = useState([]);
 
   useEffect(() => {
     fetch(``)
-  });
+  }, [searchId]);
 
 React Hooks로, 함수형 컴포넌트에서 상태와 생명주기와 관련된 작업을 수행하는 데 사용됩니다.<br>
 페이지에 변화가 생기면 useState의 함수가 알아차리고 변화를 변수에 할당해 주며,<br>
@@ -58,3 +58,26 @@ const [nextPageToken, setNextPageToken] = useState(null); 을 만든 뒤,<br>
 만약 setNextPageToken함수가 실행되어 값이 변하면 setVideos함수를 실행해 새로운 데이터를 출력하도록 fetchVideos를 선언했습니다.<br>
 더보기 버튼을 만들어 버튼에 onClick={handleLoadMore}를 해두고 버튼을 클릭하면 handleLoadMore가 실행되도록 했는데, <br>
 handleLoadMore함수의 내용은 nextPageToken가 있다면 fetchVideos를 실행하여 더보기가 작동되도록 했습니다.
+
+
+## 영상 클릭시 영상 보여주기
+비디오를 보여주는 Video페이지를 만들어 준 뒤, 
+const Video = () => {
+    const {videoId} = useParams();
+    const [videoDetail, setVideoDetail] = useState(null);
+
+    useEffect(() => {
+        fetchFromAPI(`videos?part=snippet,statistics&id=${videoId}`)
+        .then((data) => {
+            console.log(data)
+            setVideoDetail(data.items[0])
+        })
+    }, [videoId])
+} 로 해당 비디오의 정보를 가져왔습니다.
+
+콘솔에 보여진 data를 토대로 원하는 데이터를 뽑아서 해당 페이지에 보여지게 했습니다.
+
+## component의 정보를 조건에 따라 원하는 것만 가져오기
+VideoSearch가 video와 channel에서 보여지는데,
+VideoSearch의 info를 video에서는 보여주고 channel에서는 안보이게 하려했습니다.
+이는 VideoSearch에 prop을 이용해서, video에서 true를 주고 channel에서 false를 줘서 보이고 안보이게 처리했습니다.

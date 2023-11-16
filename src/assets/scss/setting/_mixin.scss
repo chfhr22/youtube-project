@@ -28,3 +28,11 @@
     -webkit-line-clamp: $line;
     -webkit-box-orient: vertical;
 }
+
+// 말줄임
+@mixin review {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }

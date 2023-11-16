@@ -8,6 +8,7 @@ import Today from './pages/Today'
 import Youtuber from './pages/Youtuber'
 import Channel from './pages/Channel'
 import Search from './pages/Search'
+import Video from './pages/Video'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/youtuber" element={<Youtuber />} />
           <Route path="/channel/:channelId" element={<Channel />} />
           <Route path="/search/:searchId" element={<Search />} />
+          <Route path="/video/:videoId" element={<Video />} />
         </Routes>
       </Main>
       <Footer />

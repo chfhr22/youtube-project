@@ -1,7 +1,22 @@
+#videoPage {
+}
 .video__inner {
     display: grid;
     grid-template-columns:  repeat(4, 24%);
     justify-content: space-between;
+    min-height: 100vh;
+
+    @media (max-width: 1400px){
+        grid-template-columns: repeat(3, 32%);
+        gap: 15px;
+    }
+    @media (max-width: 1200px){
+        grid-template-columns: repeat(2, 49%);
+        gap: 10px;
+    }
+    @media (max-width: 400px){
+        grid-template-columns: repeat(1, 100%);
+    }
 
     .video {
         margin-bottom: 50px;
@@ -39,13 +54,14 @@
                     &:hover {
                         color: var(--black100);
                     }
-                    &::after {
-                        content: ' | '; 
-                    }
                 }
                 .date {
                     font-size: 15px;
                     color: var(--black500);
+
+                    &::before {
+                        content: ' | ';
+                    }
                 }
             }
         }
@@ -98,10 +114,11 @@
                     // color: var(--white);
                 }
             }
-            .desc {
+           
+        }
+         .video__desc {
                 margin-top: 30px;
                 white-space: pre-line;
             }
-        }
     }
 }
