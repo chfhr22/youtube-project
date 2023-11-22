@@ -1,21 +1,21 @@
 export const todayText = [
     {
-        img: "",
+        img: "https://i.ytimg.com/vi/tKc2p-z_qRI/hqdefault.jpg",
         title: "정말 별거 아닌데 집에서 만들기 힘들다는 편견만 가득한 요리",
         desc: "이렇게 만들면 집에서도 전문점 맛을 낼 수 있습니다.",
         author: "1분요리뚝딱이형",
         date: "2023.11.13",
-        videoId: "",
-        channelId: ""
+        videoId: "tKc2p-z_qRI",
+        channelId: "UC0htUSwcxfSGNfK_5Q28JkA"
     },
     {
-        img: "",
+        img: "https://youtu.be/nL9Jpm3-cnk",
         title: "10명 중 6명은 못 먹는 요리",
         desc: "날씨 추워지기를 기다렸습니다.자세한 레시피는 고정 댓글에 있는 블로그를 참고해 주세요.시청해 주셔서 감사합니다",
         author: "1분요리뚝딱이형",
         date: "2023.11.13",
-        videoId: "",
-        channelId: ""
+        videoId: "nL9Jpm3-cnk",
+        channelId: "UC0htUSwcxfSGNfK_5Q28JkA"
     },
     {
         img: "",

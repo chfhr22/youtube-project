@@ -24,6 +24,32 @@ CodeSandbox에서 React를 클릭하면 코드가 나오는데 해당 문서를 
 process.env.변수이름
 
 ## youtube API로 원하는 정보 가져오기
+[youTubeAPI](https://developers.google.com/youtube/v3/docs)
+[youTubeV3](https://rapidapi.com/Glavier/api/youtube-v311)
+<!-- api.js -->
+
+import axios from 'axios';
+
+export const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
+
+const options = {
+    params: {
+        maxResults: 48,
+    },
+    headers: {
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+        'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
+    },
+};
+
+export const fetchFromAPI = async (url) => {
+    const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+    return data;
+};
+
+
+이것을 통해 YouTube API에 요청을 보내고 axios.get을 사용하여 요청을 수행, RapidAPI의 인증 정보와 함께 설정된 options 객체를 사용합니다.
+비동기 함수이므로 await를 사용하여 비동기 작업이 완료될 때까지 기다린 후 결과 데이터를 반환합니다.
 
 ## 주소창의 정보 가져오기
 const {searchId} = useParams();
@@ -82,7 +108,7 @@ const Video = () => {
 ## component의 정보를 조건에 따라 원하는 것만 가져오기
 VideoSearch가 video와 channel에서 보여지는데,
 VideoSearch의 info를 video에서는 보여주고 channel에서는 안보이게 하려했습니다.
-이는 VideoSearch에 prop을 이용해서, video에서 true를 주고 channel에서 false를 줘서 보이고 안보이게 처리했습니다.
+이는 VideoSearch에 prop을 이용해, video에서 true를 주고 channel에서 false를 줘서 보이고 안보이게 처리했습니다.
 
 ## scrollTo
 페이지가 전환되면 최상단으로 이동
@@ -96,6 +122,7 @@ const ScrollTo = () => {
     return null;
 }
 useEffect로 경로 변화를 인지하면 window.scrollTo(0,0)으로 최상단으로 이동
+
 ## SEO란?
 Search Engine Optimization(SEO)은 검색 엔진에서 웹 페이지가 노출되는 최적화를 의미합니다. SPA인 경우에는 초기 로딩 이후에 페이지가 동적으로 갱신되기 때문에, 검색 엔진이 페이지의 초기 렌더링을 인지하기 어려울 수 있습니다. 이로 인해 SPA는 SEO에 불리한 면이 있습니다.
 

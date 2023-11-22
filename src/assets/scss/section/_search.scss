@@ -1,5 +1,7 @@
 #search {
     display: flex;
+    background-color: var(--white);
+
 }
 #searchPage {
     // padding: 20px;
@@ -43,7 +45,7 @@
         position: fixed;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 3;
     }
     .search__inner {
         position: fixed;
