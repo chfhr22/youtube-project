@@ -23,6 +23,8 @@ CodeSandbox에서 React를 클릭하면 코드가 나오는데 해당 문서를 
 
 process.env.변수이름
 
+## youtube API로 원하는 정보 가져오기
+
 ## 주소창의 정보 가져오기
 const {searchId} = useParams();
 
@@ -81,3 +83,56 @@ const Video = () => {
 VideoSearch가 video와 channel에서 보여지는데,
 VideoSearch의 info를 video에서는 보여주고 channel에서는 안보이게 하려했습니다.
 이는 VideoSearch에 prop을 이용해서, video에서 true를 주고 channel에서 false를 줘서 보이고 안보이게 처리했습니다.
+
+## scrollTo
+페이지가 전환되면 최상단으로 이동
+const ScrollTo = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [pathname]);
+
+    return null;
+}
+useEffect로 경로 변화를 인지하면 window.scrollTo(0,0)으로 최상단으로 이동
+## SEO란?
+Search Engine Optimization(SEO)은 검색 엔진에서 웹 페이지가 노출되는 최적화를 의미합니다. SPA인 경우에는 초기 로딩 이후에 페이지가 동적으로 갱신되기 때문에, 검색 엔진이 페이지의 초기 렌더링을 인지하기 어려울 수 있습니다. 이로 인해 SPA는 SEO에 불리한 면이 있습니다.
+
+이러한 문제를 해결하기 위해 react-helmet과 같은 라이브러리를 사용하여 페이지 전환 시에 메타데이터를 동적으로 변경할 수 있습니다. react-helmet은 React 애플리케이션에서 헤더 태그를 조작하는 데 사용되며, 이를 통해 각 페이지의 타이틀, 설명, 키워드 등의 메타데이터를 설정하여 검색 엔진이 페이지를 더 잘 이해하고 색인(index)할 수 있도록 도와줍니다.
+
+## Helmet
+import { Helmet } from 'react-helmet';
+
+<!-- Main.jsx -->
+<Helmet
+    titleTemplate="%s | Cooking Youtube"
+    defaultTitle="Cooking Youtube"
+    defer={false}
+>
+    {props.title && <title>{props.title}</title>}
+    <meta name="description" content={props.description} />
+</Helmet>
+
+
+<!-- 그 외의 components -->
+<Main
+  title="요리 유튜버"
+  description="요리 유튜버 모음 사이트에 오신것을 환영합니다."
+>
+이렇게 메인에 기본값을 설정한 후 각 component마다 원하는 meta데이터를 넣어주면 react도 SEO최적화로 인해 노출빈도가 올라갈 수 있다.
+
+## Suspense.js (App.js에서 사용)
+[사용법](https://react.dev/reference/react/Suspense)
+
+Suspense는 리액트에서 비동기적으로 데이터를 가져올 때 사용되는 기능입니다.
+이를 사용하면 데이터를 가져오는 동안 로딩 상태를 처리하고, 데이터가 준비되면 컴포넌트가 렌더링되도록 할 수 있습니다.
+
+const Home = lazy(() => import('./pages/Home'))
+const Today = lazy(() => import('./pages/Today'))
+
+<Suspense fallback={<Main />}>
+  <Route path="/" element={<Home />} /> 
+  <Route path="/today" element={<Today />} />
+</Suspense>
+비동기로 불러올 컴포넌트를 Suspense로 감싼 후 lazy를 사용하여 비동기적으로 컴포넌트를 로딩하여 컴포넌트가 필요한 시점에만 로딩되게 했습니다.

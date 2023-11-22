@@ -38,6 +38,21 @@
 @media (max-width: 800px) {
     #header {
         left: -260px;
+        transition: all 0.3 ease-in;
+
+        .header__logo {
+            position: fixed;
+        }
+
+        &.show {
+            left: 0;
+        }
+    }
+    #header {
+        &.show {
+            display: block;
+            top: 85px;
+        }
     }
 
     #main {

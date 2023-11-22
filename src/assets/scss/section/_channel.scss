@@ -48,5 +48,16 @@
     .channel__video {
         margin: 0 20px;
     }
-    .channel__more {}
+    .channel__more {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    
+        .button__more {
+            padding: 10px 20px;
+            border: 1px solid var(--black600);
+            border-radius: 20px;
+            background-color: var(--subColor);
+        }
+    }
 }
