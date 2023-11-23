@@ -2,8 +2,6 @@
 유튜브 API를 이용하여 요리 레시피를 모아보기.
 요리 유튜버 / 추천 레시피 / 1분 레시피 / 다이어트 레시피
 
-<img src="https://chfhr22.github.io/youtube-project/src/assets/img/image.png">
-
 ## 라이브러리 설치
 npm install react-router-dom axios react-icon react-player sass react-helmet-async swiper <br>
 
