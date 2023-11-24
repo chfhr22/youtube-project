@@ -8,7 +8,8 @@ import Main from '../components/section/Main';
 const Video = () => {
     const {videoId} = useParams();
     const [videoDetail, setVideoDetail] = useState(null);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         fetchFromAPI(`videos?part=snippet,statistics&id=${videoId}`)
@@ -16,6 +17,11 @@ const Video = () => {
             console.log(data)
             setVideoDetail(data.items[0])
             setLoading(false)
+        })
+
+        fetchFromAPI(`commentThreads?part=snippet&videoId=${videoId}`)
+        .then((data) => {
+            setComments(data.items.slice(0,10))
         })
     }, [videoId])
 
@@ -56,6 +62,16 @@ const Video = () => {
                 </div>
             </div>
             )}
+
+            <h2 className='comment__title'>댓글</h2>
+            <ul className='comment__wrap'>
+                {comments.map(comment => (
+                    <li key={comment.id} className='comment'>
+                        <h3 className='comment__author'>{comment.snippet.topLevelComment.snippet.authorDisplayName}</h3>
+                        <p className='comment__cont'>{comment.snippet.topLevelComment.snippet.textOriginal}</p>
+                    </li>
+                ))}
+            </ul>
             
         </section>
     </Main>

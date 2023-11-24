@@ -1,5 +1,4 @@
-#videoPage {
-}
+#videoPage {}
 .video__inner {
     display: grid;
     grid-template-columns:  repeat(4, 24%);
@@ -117,11 +116,32 @@
            
         }
          .video__desc {
-                margin-top: 30px;
+                margin: 30px 0;
                 white-space: pre-line;
             }
     }
 }
+.comment__title {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+.comment__wrap {
+
+    .comment {
+        border: 1px solid #000;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: var(--lavanda);
+
+        .comment__author {
+            font-weight: 600;
+        }
+        .comment__cont {
+            margin-left: 20px;
+        }
+    }
+}  
 .video__slider {
 
 

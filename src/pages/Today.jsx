@@ -23,15 +23,20 @@ const Today = () => {
                     <div className={`today__inner ${channelPageClass}`} key={key}>
                         <div className="today__thumb">
                             <Link
-                                to={`{/video/${today.videoId}`}
+                                to={`/video/${today.videoId}`}
                                 style={{backgroundImage: `url(${today.img})`}}
                             >
                             </Link>
                         </div>
                         <div className="today__text">
                             <span className='today'>오늘 뭐먹지?</span>
+                            <Link
+                                to={`/video/${today.videoId}`}
+                                style={{backgroundImage: `url(${today.img})`}}
+                            >
                             <h3 className='title'>{today.title}</h3>
                             <p className='desc'>{today.desc}</p>
+                            </Link>
                             <div className='info'>
                                 <span className="author">{today.author}</span>
                                 <span className="date">{today.date}</span>
