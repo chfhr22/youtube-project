@@ -51,11 +51,11 @@ const Home = () => {
             <Today />
             <Youtuber />
 
-            <VideoSlider videos={channelVideo} title='취미로 요리하는 남자 최신 영상' name='v1' />
-            <VideoSlider videos={channelVideo2} title='뚝딱이형 최신 영상' name='v2' />
-            <VideoSlider videos={channelVideo3} title='백종원 최신 영상' name='v3' />
-            <VideoSlider videos={channelVideo4} title='자취요리신 최신 영상' name='v4' />
-            <VideoSlider videos={channelVideo5} title='하루한끼 최신 영상' name='v5' />
+            <VideoSlider videos={channelVideo} title='🍖취미로 요리하는 남자 최신 영상' name='v1' />
+            <VideoSlider videos={channelVideo2} title='🥐뚝딱이형 최신 영상' name='v2' />
+            <VideoSlider videos={channelVideo3} title='🍔백종원 최신 영상' name='v3' />
+            <VideoSlider videos={channelVideo4} title='🍕자취요리신 최신 영상' name='v4' />
+            <VideoSlider videos={channelVideo5} title='🍗하루한끼 최신 영상' name='v5' />
         </Main>
     )
 }

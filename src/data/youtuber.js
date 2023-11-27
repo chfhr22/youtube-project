@@ -17,12 +17,12 @@ export const youtuberText = [
         channel: "UCyozK5OFN5lDrwim5wqQnLA",
         channelAddress: "https://www.youtube.com/@yo-nam"
     },
-    {
-        img: "https://yt3.googleusercontent.com/qiZe1Vym4eG1dapkiT-24JEDkodJ4-tkF5d98OYvZb6T5y4uTmO64u2Q8GMR9NLgLDDl3Oj4zkA=s176-c-k-c0x00ffffff-no-rj",
-        author: "지뻔뻔",
-        channel: "UCZaarGiwxVusY_jQlnftbIA",
-        channelAddress: "https://www.youtube.com/@zpp"
-    },
+    // {
+    //     img: "https://yt3.googleusercontent.com/qiZe1Vym4eG1dapkiT-24JEDkodJ4-tkF5d98OYvZb6T5y4uTmO64u2Q8GMR9NLgLDDl3Oj4zkA=s176-c-k-c0x00ffffff-no-rj",
+    //     author: "지뻔뻔",
+    //     channel: "UCZaarGiwxVusY_jQlnftbIA",
+    //     channelAddress: "https://www.youtube.com/@zpp"
+    // },
     {
         img: "https://yt3.googleusercontent.com/eRa3Cs-xC1xkUkby4-sJpZ5ewoUMoPq3mBntjAO8Y-I0D_U34dSceqjirMM2bGJuEWpLJMzu=s176-c-k-c0x00ffffff-no-rj",
         author: "1분요리 뚝딱이형",
