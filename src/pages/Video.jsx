@@ -32,7 +32,7 @@ const Video = () => {
         description="선택하신 영상을 볼 수 있는 페이지입니다."
     >
         <section id="videoPage" className={channelPageClass}>
-            <h2>비디오</h2>
+            <h2 className='blind'>비디오</h2>
             {videoDetail && (
                 <div className="video__view">
                 <div className="video__play">

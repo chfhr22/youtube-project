@@ -48,10 +48,6 @@ export const keywordText = [
         src: "/search/쿠킹하루",
     },
     {
-        title: "이 남자의 cook",
-        src: "/search/이남자의cook",
-    },
-    {
         title: "육식맨",
         src: "/search/육식맨",
     },
@@ -62,6 +58,26 @@ export const keywordText = [
     {
         title: "꿀주부",
         src: "/search/꿀주부",
+    },
+    {
+        title: "이남자의cook",
+        src: "/search/이남자의cook",
+    },
+    {
+        title: "쿠킹하루",
+        src: "/search/쿠킹하루",
+    },
+    {
+        title: "메리즈니부엌",
+        src: "/search/메리즈니부엌",
+    },
+    {
+        title: "쿡언니네",
+        src: "/search/쿡언니네",
+    },
+    {
+        title: "요리왕비룡",
+        src: "/search/요리왕비룡",
     },
 ]
 
