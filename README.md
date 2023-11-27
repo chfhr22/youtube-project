@@ -165,3 +165,34 @@ const Today = lazy(() => import('./pages/Today'))
   <Route path="/today" element={<Today />} />
 </Suspense>
 비동기로 불러올 컴포넌트를 Suspense로 감싼 후 lazy를 사용하여 비동기적으로 컴포넌트를 로딩하여 컴포넌트가 필요한 시점에만 로딩되게 했습니다.
+
+## 클릭시 해당 위치를 가져와 active 붙여주기
+
+```js
+import { useLocation } from 'react-router-dom';
+
+<ul className='menu'>
+    {headerMenus.map((menu, key) => (
+        <li key={key} className={location.pathname === menu.src ? 'active' : ''}>
+            <Link to={menu.src}>
+                {menu.icon}{menu.title}
+            </Link>
+        </li>
+    ))}
+</ul>
+```
+
+useLocation을 이용하여 현재 페이지의 경로(주소창의 주소)를 추출하고, 3항연산자를 이용하여 location.pathname과 menu.src이 같으면 active가 붙도록 하였습니다.
+
+## 트러블슈팅
+<details>
+<summary>npx create-react-app 실패</summary>
+
+```js                                    
+npm install -g npm@latest                                                                  
+```                                    
+   
+이 명령어를 통해 npm을 최신 버전으로 업데이트한 후, 다시 명령어를 실행하니 에러가 사라졌습니다.                                  
+이 문제는 Node.js와 npm의 버전 차이로 인해 발생한 문제였고, 최근에 Node.js를 새로 설치한 이후에 npm이 업데이트 되지 않아 발생한 문제로 보입니다.             
+이로 인해 npm 버전이 뒤떨어져 있었고, 이로 인해 발생한 호환성 문제가 이러한 에러를 초래되었습니다.
+</details>
